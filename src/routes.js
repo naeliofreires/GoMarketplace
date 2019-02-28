@@ -49,4 +49,10 @@ routes.post(
   handle(controllers.PurchaseController.store)
 )
 
+routes.post(
+  '/purchase/accept',
+  validate(validators.AcceptPurchase),
+  handle(controllers.PurchaseController.acceptPurchase)
+)
+
 module.exports = routes

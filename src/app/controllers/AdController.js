@@ -20,7 +20,7 @@ class AdController {
       filters.title = new RegExp(req.query.title, 'i') // 'i' ativando case-sensitive
     }
 
-    const ads = await Ad.paginate(filters, {
+    const ads = await Ad.paginate({ purchasedBy: null }, filters, {
       page: req.query.page || 1,
       limit: 20,
       populate: ['author'], // traz os relacionamentos que queremos

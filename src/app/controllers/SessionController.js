@@ -10,7 +10,6 @@ class SessionController {
       return res.status(400).json({ error: 'User not found' })
     }
 
-    // console.log('kkk', user.compareHash)
     if (!(await user.compareHash(password))) {
       return res.status(400).json({ error: 'Invalid password' })
     }
